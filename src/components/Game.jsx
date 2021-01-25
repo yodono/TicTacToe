@@ -5,6 +5,7 @@ import calculateWinner from "../util/calculateWinner";
 class Game extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       history: [
         {
@@ -14,6 +15,16 @@ class Game extends Component {
       stepNumber: 0,
       xIsNext: true,
     };
+  }
+
+  initialize(){
+    this.setState({
+      squares: Array(9).fill(null),
+      stepNumber: 0,
+      xIsNext: true,
+    });
+    
+    // alert('Foi');
   }
 
   handleClick(i) {
@@ -49,15 +60,17 @@ class Game extends Component {
 
     return (
       <div className="game">
+        <div className="game-info">
+          <div>{status}</div>
+        </div>
         <div className="game-board">
           <Board
             squares={current.squares}
             onClick={(i) => this.handleClick(i)}
           />
         </div>
-        <div className="game-info">
-          <div>{status}</div>
-        </div>
+
+        <button id="restart" onClick={()=>this.initialize()}>Restart Game</button>
       </div>
     );
   }

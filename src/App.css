@@ -1,1 +1,47 @@
 /* Escreva seu css aqui */
+@font-face {
+    font-family: 'lapis'; /*a name to be used later*/
+    src: url('./fonts/DrawingGuides-MJ7p.ttf');
+} 
+
+.board-row{
+    height: 200px;
+}
+
+.square{ 
+    width: 200px; 
+    height: 100%; 
+    border: solid 3px;
+    vertical-align: middle;
+    font-size: 150px;
+    font-family: 'lapis';
+}
+
+.square:hover {
+    border-color: lightgreen;
+}
+
+.game-board{
+    margin: 0 auto;
+}
+
+.game-info{
+    font-size: 70px;
+    font-family: 'lapis';
+    margin-bottom: 10px;
+    margin-top: 50px;
+}
+
+.game{
+    text-align: center; 
+    height: 100%;
+}
+
+#restart{
+    margin: 30px;
+    background-color: indianred;
+    height: 50px;
+    width: 200px;
+    border: 0;
+    border-radius: 5px;
+}
